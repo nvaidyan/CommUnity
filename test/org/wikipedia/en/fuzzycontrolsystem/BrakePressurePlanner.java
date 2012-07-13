@@ -1,14 +1,10 @@
 package org.wikipedia.en.fuzzycontrolsystem;
 
-import java.util.Arrays;
-
-import org.wikipedia.en.fuzzycontrolsystem.strategies.BreakPressureAdaptationStrategy;
-
 import com.nicholasvaidyanathan.community.agents.Planner;
-import com.nicholasvaidyanathan.community.strategies.Strategy;
 
 public class BrakePressurePlanner extends Planner {
 
+	
 	public BrakePressurePlanner(String heat, String speed) {
 		super(new Object[]{ heat, speed} );
 	}
@@ -18,10 +14,12 @@ public class BrakePressurePlanner extends Planner {
 	}
 
 	@Override
-	public Strategy plan() {
-		Object[] data = this.getData();
-		String[] copy = Arrays.copyOf(data, data.length, String[].class);
-		return (Strategy) new BreakPressureAdaptationStrategy().evaluate(copy);
+	protected void setData(Object... objects) {
+		if(	objects.length != 2 && 
+				!(objects[0] instanceof String) && 
+				!(objects[1] instanceof String) ){
+				throw new UnsupportedOperationException("Should be called with two strings");
+			}
+			this.data = objects;
 	}
-
 }

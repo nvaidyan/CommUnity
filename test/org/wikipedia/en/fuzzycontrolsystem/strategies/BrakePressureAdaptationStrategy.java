@@ -2,10 +2,11 @@ package org.wikipedia.en.fuzzycontrolsystem.strategies;
 
 import com.nicholasvaidyanathan.community.strategies.Strategy;
 
-public class BreakPressureAdaptationStrategy implements Strategy {
+public class BrakePressureAdaptationStrategy implements Strategy {
 
 	@Override
 	public Object evaluate(Object obj) {
+		
 		if(!(obj instanceof String[])){
 			return null;
 		}

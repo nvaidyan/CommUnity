@@ -1,6 +1,6 @@
 package org.wikipedia.en.fuzzycontrolsystem;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -9,12 +9,11 @@ import org.wikipedia.en.fuzzycontrolsystem.domain.Car;
 import org.wikipedia.en.fuzzycontrolsystem.sensors.BrakeTemperatureSensor;
 import org.wikipedia.en.fuzzycontrolsystem.sensors.Speedometer;
 import org.wikipedia.en.fuzzycontrolsystem.strategies.BrakeTemperatureReaderStrategy;
-import org.wikipedia.en.fuzzycontrolsystem.strategies.DecreaseBrakePressureStrategy;
 import org.wikipedia.en.fuzzycontrolsystem.strategies.HeatCheckStrategy;
+import org.wikipedia.en.fuzzycontrolsystem.strategies.PlanningStrategy;
 import org.wikipedia.en.fuzzycontrolsystem.strategies.SpeedCheckStrategy;
 import org.wikipedia.en.fuzzycontrolsystem.strategies.SpeedometerReaderStrategy;
 
-import com.nicholasvaidyanathan.community.agents.Agent;
 import com.nicholasvaidyanathan.community.agents.Analyst;
 import com.nicholasvaidyanathan.community.agents.Planner;
 import com.nicholasvaidyanathan.community.agents.Scout;
@@ -65,7 +64,8 @@ public class BreaksTest {
 
 	private void executePlan(String heat, String speed, Object obj) {
 		Planner brain = new BrakePressurePlanner(heat, speed);
-		brain.act(obj, new DecreaseBrakePressureStrategy());
+		Strategy resolved = (Strategy) new PlanningStrategy().evaluate(brain);
+		brain.act(batMobile, resolved);
 	}
 	
 	@Test
@@ -93,17 +93,4 @@ public class BreaksTest {
 		dems = new Brakes(new BrakeTemperatureSensor(85));
 		batMobile = new Car(dems, new Speedometer(79));
 	}
-	
-	@Test
-	public void testVetoPlanner() {
-		createChangeCondition();
-		int temp = retrieveReading(dems, new BrakeTemperatureReaderStrategy());
-		int speed = retrieveReading(batMobile, new SpeedometerReaderStrategy());
-		String heatResult = retrieveAnalysis(temp, new HeatCheckStrategy());
-		String speedResult = retrieveAnalysis(speed, new SpeedCheckStrategy());
-		Agent brain = new BrakePressurePlanner(false, new Object[]{heatResult, speedResult});
-		brain.act(batMobile, new DecreaseBrakePressureStrategy());
-		assertEquals(-5, batMobile.getBrakePressure());
-	}
-
 }
