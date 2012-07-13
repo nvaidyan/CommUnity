@@ -17,6 +17,10 @@ public abstract class Planner implements Agent {
 
 	@Override
 	public Object act(Object toActOn, Strategy toUse) {
+		return plan(toActOn, toUse);
+	}
+	
+	public Object plan(Object toActOn, Strategy toUse){
 		return toUse.evaluate(toActOn);
 	}
 }
