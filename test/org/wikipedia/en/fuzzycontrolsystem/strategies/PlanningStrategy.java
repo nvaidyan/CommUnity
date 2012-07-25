@@ -2,7 +2,7 @@ package org.wikipedia.en.fuzzycontrolsystem.strategies;
 
 import java.util.Arrays;
 
-import com.nicholasvaidyanathan.community.agents.Planner;
+import com.nicholasvaidyanathan.community.roles.Planner;
 import com.nicholasvaidyanathan.community.strategies.Strategy;
 
 public class PlanningStrategy implements Strategy {

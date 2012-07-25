@@ -1,4 +1,4 @@
-package com.nicholasvaidyanathan.community.agents;
+package com.nicholasvaidyanathan.community;
 
 import com.nicholasvaidyanathan.community.strategies.Strategy;
 

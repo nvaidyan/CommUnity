@@ -1,6 +1,6 @@
 package org.wikipedia.en.fuzzycontrolsystem;
 
-import com.nicholasvaidyanathan.community.agents.Planner;
+import com.nicholasvaidyanathan.community.roles.Planner;
 
 public class BrakePressurePlanner extends Planner {
 

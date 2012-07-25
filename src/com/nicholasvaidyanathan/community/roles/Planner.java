@@ -1,7 +1,8 @@
-package com.nicholasvaidyanathan.community.agents;
+package com.nicholasvaidyanathan.community.roles;
 
 import java.util.Arrays;
 
+import com.nicholasvaidyanathan.community.Agent;
 import com.nicholasvaidyanathan.community.strategies.Strategy;
 
 public abstract class Planner implements Agent {

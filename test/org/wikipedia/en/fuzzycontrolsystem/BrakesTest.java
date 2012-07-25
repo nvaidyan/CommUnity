@@ -14,9 +14,9 @@ import org.wikipedia.en.fuzzycontrolsystem.strategies.PlanningStrategy;
 import org.wikipedia.en.fuzzycontrolsystem.strategies.SpeedCheckStrategy;
 import org.wikipedia.en.fuzzycontrolsystem.strategies.SpeedometerReaderStrategy;
 
-import com.nicholasvaidyanathan.community.agents.Analyst;
-import com.nicholasvaidyanathan.community.agents.Planner;
-import com.nicholasvaidyanathan.community.agents.Scout;
+import com.nicholasvaidyanathan.community.roles.Analyst;
+import com.nicholasvaidyanathan.community.roles.Planner;
+import com.nicholasvaidyanathan.community.roles.Scout;
 import com.nicholasvaidyanathan.community.strategies.Strategy;
 
 public class BrakesTest {

@@ -1,5 +1,6 @@
-package com.nicholasvaidyanathan.community.agents;
+package com.nicholasvaidyanathan.community.roles;
 
+import com.nicholasvaidyanathan.community.Agent;
 import com.nicholasvaidyanathan.community.strategies.Strategy;
 
 public abstract class Scout implements Agent {
