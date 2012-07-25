@@ -19,7 +19,7 @@ import com.nicholasvaidyanathan.community.agents.Planner;
 import com.nicholasvaidyanathan.community.agents.Scout;
 import com.nicholasvaidyanathan.community.strategies.Strategy;
 
-public class BreaksTest {
+public class BrakesTest {
 	Brakes dems;
 	Car batMobile;
 	
@@ -39,7 +39,7 @@ public class BreaksTest {
 	}
 
 	private int retrieveReading(Object obj, Strategy strat) {
-		Scout hermes = new Scout();
+		Scout hermes = new BrakeScout();
 		int reading = (Integer) hermes.get(obj,strat);
 		return reading;
 	}
@@ -51,7 +51,7 @@ public class BreaksTest {
 	}
 
 	private String retrieveAnalysis(Object obj, Strategy strat) {
-		Analyst iLikeIt = new Analyst();
+		Analyst iLikeIt = new BrakeAnalyst();
 		String heatResult = iLikeIt.analyze(obj, strat).toString();
 		return heatResult;
 	}

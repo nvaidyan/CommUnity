@@ -2,7 +2,7 @@ package com.nicholasvaidyanathan.community.agents;
 
 import com.nicholasvaidyanathan.community.strategies.Strategy;
 
-public class Scout implements Agent {
+public abstract class Scout implements Agent {
 	@Override
 	public Object act(Object toActOn, Strategy toUse) {
 		return get(toActOn, toUse);
