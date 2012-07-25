@@ -23,17 +23,4 @@ public class ClockTests {
 		// Then: the arrow of time advances
 		assertEquals(1, clock.getTicks());
 	}
-	
-	@Test
-	public void testAgentCanWatchClock(){
-		// And: An Agent
-		DumbAgent aggie = new DumbAgent();
-		// When: An agent watches a clock
-		aggie.watch(clock);
-		// And: The clock ticks
-		clock.tick();
-		// Then: the agent was notified
-		assertTrue(aggie.wasNotified);
-	}
-
 }

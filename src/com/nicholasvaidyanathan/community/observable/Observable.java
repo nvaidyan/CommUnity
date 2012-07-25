@@ -35,4 +35,9 @@ public abstract class Observable implements Subject {
 			o.update(this, data);
 		}
 	}
+	
+	@Override
+	public int countObservers(){
+		return observers == null ? 0 : observers.size(); 
+	}
 }
