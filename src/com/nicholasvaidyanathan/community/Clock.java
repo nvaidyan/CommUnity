@@ -1,6 +1,8 @@
 package com.nicholasvaidyanathan.community;
 
-public interface Clock {
+import com.nicholasvaidyanathan.community.observable.Subject;
+
+public interface Clock extends Subject {
 
 	long getTicks();
 	void tick();

@@ -1,5 +1,7 @@
 package org.wikipedia.en.fuzzycontrolsystem;
 
+import com.nicholasvaidyanathan.community.Clock;
+import com.nicholasvaidyanathan.community.observable.Observable;
 import com.nicholasvaidyanathan.community.roles.Planner;
 
 public class BrakePressurePlanner extends Planner {
@@ -21,5 +23,17 @@ public class BrakePressurePlanner extends Planner {
 				throw new UnsupportedOperationException("Should be called with two strings");
 			}
 			this.data = objects;
+	}
+
+	@Override
+	public void watch(Clock clock) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(Observable obs, Object dataInterestedIn) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -1,6 +1,8 @@
 package com.nicholasvaidyanathan.community;
 
-public class BasicClock implements Clock {
+import com.nicholasvaidyanathan.community.observable.Observable;
+
+public class BasicClock extends Observable implements Clock {
 	private long ticks;
 	@Override
 	public long getTicks() {
@@ -10,6 +12,6 @@ public class BasicClock implements Clock {
 	@Override
 	public void tick() {
 		ticks++;
+		notifyObservers();
 	}
-
 }
